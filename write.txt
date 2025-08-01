@@ -3,4 +3,19 @@ fullname-string
 email-string
 password-string
 cart-Array of product ids
+isadmin-boolean
+orders-Array
+contact no.-number
+picture-url
+
+
+
+productmodel
+name
+totalprice
+discprice
+imageurl
+bgcolor
+panelcolor
+textcolor
 
