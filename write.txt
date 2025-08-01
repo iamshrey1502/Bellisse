@@ -1,0 +1,6 @@
+usermodel
+fullname-string
+email-string
+password-string
+cart-Array of product ids
+
