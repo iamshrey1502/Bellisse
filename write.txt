@@ -19,3 +19,10 @@ bgcolor
 panelcolor
 textcolor
 
+/-signup or login
+/shop-shop
+/users/cart-cart
+/admin-admin panel
+/owner/product-show all products
+/owner/admin-show admin panel to create products
+

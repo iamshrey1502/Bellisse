@@ -1,9 +1,14 @@
 const mongoose=require('mongoose');
+const config=require('config');
+const dbgr=require('debug')("development:mongoose");
+//`${config.get("MONGODB_URI")}/bellisse`
 
-mongoose.connect("mongodb://127.0.0.1:27017/bellisse").then(function(){
-    console.log("Connection established");
-}).catch(function(err){
-    console.log(err);
+mongoose.connect(`${config.get("MONGODB_URI")}/bellisse`)//works on the basis of whats your enivorment varibale is
+.then(function(){
+    dbgr("Connection established");
+})
+.catch(function(err){
+    dbgr(err);
 });
 
 module.exports=mongoose.connection;

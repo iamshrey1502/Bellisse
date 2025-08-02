@@ -18,7 +18,6 @@ const userschema=mongoose.Schema({
         default:[],
     },
     contact:Number,
-    isadmin:Boolean,
     picture:String,
 });
 
