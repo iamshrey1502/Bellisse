@@ -8,7 +8,7 @@ const productschema=mongoose.Schema({
         type:Number,
         default:0,
     },
-    image:String,
+    image:Buffer,
     bgcolor:String,
     panelcolor:String,
     textcolor:String,
