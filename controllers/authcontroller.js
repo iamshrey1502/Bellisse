@@ -60,8 +60,8 @@ module.exports.loginuser=async function(req,res){
             if(result){
                 let token=generatetoken(user);
                 res.cookie("token",token);
-                // req.flash("success","You can login!");
-                // res.render("shop");
+                req.flash("success","You are loggedin!");// setting message in this route and making it visible in redirected route
+                res.redirect("/shop");
             }
             else{
                 req.flash("error","Email or Password incorrect");
@@ -73,6 +73,7 @@ module.exports.loginuser=async function(req,res){
 
 module.exports.logout=async function(req,res){
     res.cookie("token","");
-    res.redirect("/");
+    // req.flash("success","You are logged out");
+    // res.redirect("/");
 
 };

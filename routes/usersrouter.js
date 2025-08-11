@@ -10,10 +10,10 @@ const {registeruser,loginuser,logout}=require('../controllers/authcontroller');
 
 
 
-router.get("/",function(req,res){
-    res.send("hey");
+// router.get("/",function(req,res){
+//     res.send("hey");
 
-})
+// })
 
 router.post("/register",registeruser);
 
