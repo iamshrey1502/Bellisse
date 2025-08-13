@@ -1,6 +1,7 @@
 const mongoose=require('mongoose');
 
 
+
 const productschema=mongoose.Schema({
     name:String,
     totalprice:Number,

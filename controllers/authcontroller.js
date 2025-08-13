@@ -73,7 +73,7 @@ module.exports.loginuser=async function(req,res){
 
 module.exports.logout=async function(req,res){
     res.cookie("token","");
-    // req.flash("success","You are logged out");
-    // res.redirect("/");
+    req.flash("success","You are logged out");
+    res.redirect("/");
 
 };
