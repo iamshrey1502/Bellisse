@@ -34,3 +34,16 @@ textcolor
             </span>
         </div>
         <% } %> -->
+
+
+{
+    "MONGODB_URI":"mongodb://127.0.0.1:27017"
+}
+
+mongoose.connect(`${config.get("MONGODB_URI")}/bellisse`)//works on the basis of whats your enivorment varibale is
+.then(function(){
+    dbgr("Connection established");
+})
+.catch(function(err){
+    dbgr(err);
+});

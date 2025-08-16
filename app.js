@@ -6,7 +6,7 @@ process.on('deprecation', (deprecation) => {
 });
 
 
-
+require('dotenv').config();
 const express=require('express');
 const app=express();
 const cookieparser=require('cookie-parser');
@@ -15,16 +15,17 @@ const expsession=require('express-session');
 const flash=require('connect-flash');
 
 
+// const paypal=require('./services/paypal');
+
+
 const db=require("./config/mongoose-connection");
 
 
 const ownersrouter=require('./routes/ownersrouter');
 const productsrouter=require('./routes/productsrouter');
 const usersrouter=require('./routes/usersrouter');
+const paymentrouter=require('./routes/paymentrouter');
 const indexrouter=require('./routes/index');
-
-
-require('dotenv').config();
 
 
 app.use(express.json());
@@ -38,6 +39,7 @@ app.use(
     })
 );
 
+
 app.use(flash());
 app.use(express.static(path.join(__dirname,'public')));
 app.set("view engine","ejs");
@@ -46,14 +48,21 @@ app.use("/",indexrouter);
 app.use("/owners",ownersrouter);
 app.use("/products",productsrouter);
 app.use("/users",usersrouter);
+app.use("/payment",paymentrouter);
+
+
+
 // app.use("/",index);
 
 // app.get("/",function(req,res){
 //     res.send("Hello World");
 // });
+
+
 app.get("/", (req, res) => {
     let error = req.flash("error");
     res.render("index", { error });
 });
+
 
 app.listen(3000);
